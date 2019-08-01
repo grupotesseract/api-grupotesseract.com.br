@@ -20,7 +20,7 @@ class Contact extends Model
     use SoftDeletes;
 
     public $table = 'contacts';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -51,11 +51,7 @@ class Contact extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'string|nullable',
-        'email' => 'string:nullable',
-        'subject' => 'string|nullable',
-        'message' => 'string|nullable'
     ];
 
-    
+
 }
