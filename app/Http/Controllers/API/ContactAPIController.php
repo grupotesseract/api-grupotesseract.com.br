@@ -5,10 +5,12 @@ namespace App\Http\Controllers\API;
 use App\Http\Requests\API\CreateContactAPIRequest;
 use App\Http\Requests\API\UpdateContactAPIRequest;
 use App\Models\Contact;
+use App\Mail\ContactMail;
 use App\Repositories\ContactRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use Mail;
 
 /**
  * Class ContactController
@@ -56,6 +58,9 @@ class ContactAPIController extends AppBaseController
         $input = $request->all();
 
         $contact = $this->contactRepository->create($input);
+
+        Mail::to(env('EMAIL_DESTINO_CONTATO'))
+            ->send(new ContactMail($contact));
 
         return $this->sendResponse($contact->toArray(), 'Contact saved successfully');
     }
