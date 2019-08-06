@@ -1,9 +1,14 @@
-# Mensagem recebida pelo formulario do site
+<h3> Mensagem recebida pelo formulario do site 🔥!!</h3>
 
-Nome: {{ $contact->name }}
+<hr>
 
-Email: {{ $contact->email }}
+<p> Nome: {{ $contact->name }} </p>
 
-Assunto: {{ $contact->subject }}
+<p> Email: {{ $contact->email }} </p>
 
-Mensagem: {{ $contact->message }}
+<p> Assunto: {{ $contact->subject }} </p>
+
+<p> Mensagem: {{ $contact->message }} </p>
+
+<hr>
+
